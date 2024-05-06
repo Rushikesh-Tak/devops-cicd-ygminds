@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-                git 'https://github.com/ankit-jagtap-devops/devops-cicd-ygminds.git'
+                git 'https://github.com/Rushikesh-Tak/devops-cicd-ygminds.git'
                 sh 'mvn clean install'
             }
         }
@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u ankitjagtap -p ${dockerhubpwd}'
+                   withCredentials([string(credentialsId: 'dockerhub-id', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u rushikeshtak -p ${dockerhubpwd}'
 
 }
                    sh 'docker push ankitjagtap/devops-integration'
