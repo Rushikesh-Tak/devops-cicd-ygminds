@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u rushikeshtak -p ${dockerhubpwd}'
 
 }
-                   sh 'docker push ankitjagtap/devops-integration'
+                   sh 'docker push rushikeshtak/rushikeshdevops1 '
                 }
             }
         }
